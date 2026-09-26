@@ -1,34 +1,93 @@
-# AI Bootcamp Machine Learning Project
+# Heart Disease Prediction
 
-This repository contains machine learning projects and educational materials developed as part of an AI Bootcamp. It covers a variety of machine learning concepts, models, and datasets.
+An educational machine-learning project that compares Logistic Regression and Random Forest models for binary heart-disease classification using clinical features.
 
-## Project Structure
+> **Important:** This project is for educational purposes only. It is not a medical device and must not be used to diagnose, treat, or make healthcare decisions.
 
-*   **`ML.ipynb`**: Demonstrates various machine learning regression models (Linear Regression, Decision Tree, Random Forest, XGBoost, etc.) and compares their performance using metrics like MAE, RMSE, and R-Squared.
-*   **`DNN_Breast_Cancer_Educational.ipynb`**: An educational notebook that explores Deep Neural Networks (DNN) applied to breast cancer classification, comparing Scikit-learn's `MLPClassifier` with a custom TensorFlow/Keras neural network.
-*   **`(Starter).ipynb`**: Contains starter code and initial exploratory data analysis templates.
-*   **`Testman/Heart_Disease_Prediction.ipynb`**: Focuses on classifying heart disease using Logistic Regression and Random Forest classifiers, including feature importance analysis and ROC curve visualization.
+## Project overview
 
-## Datasets
+The notebook demonstrates a complete classification workflow:
 
-*   `data.csv`: Main dataset used for regression modeling in `ML.ipynb`.
-*   `Salary_Data.csv`: Salary dataset for simple regression tasks.
-*   `Testman/heart.csv`: Heart disease dataset containing patient metrics.
+- Loading and inspecting the dataset
+- Checking missing values and class balance
+- Exploring feature correlations
+- Splitting data with stratification
+- Standardizing input features
+- Training Logistic Regression and Random Forest models
+- Comparing accuracy and ROC AUC
+- Reviewing a confusion matrix and classification report
+- Plotting an ROC curve
+- Examining Random Forest feature importance
 
-## Setup Instructions
+## Dataset
 
-1. Clone the repository.
-2. Ensure you have Python installed along with the following libraries:
-   * `pandas`
-   * `numpy`
-   * `scikit-learn`
-   * `matplotlib`
-   * `seaborn`
-   * `xgboost`
-   * `tensorflow` (for the DNN notebook)
-3. Open the `.ipynb` notebooks using Jupyter Notebook or JupyterLab.
-4. Run the cells in order to train the models and visualize the results.
+The included educational sample contains 50 records, 13 input features, and a binary `target` column. Features include age, sex, chest-pain category, resting blood pressure, cholesterol, maximum heart rate, exercise-related measurements, and other encoded clinical attributes.
 
-## Model Saving
+### Data notice
 
-The notebooks demonstrate how to save and load trained models using `joblib` and `h5` formats. The code handles creating a `saved_models` directory to organize output artifacts.
+The included dataset is synthetic/fictional educational data. It does not represent real patients, does not contain real patient records, and must not be used for medical diagnosis, treatment, or clinical decision-making.
+
+## Results
+
+Using the current notebook configuration and a 20% stratified holdout:
+
+| Model | Accuracy | ROC AUC |
+| --- | ---: | ---: |
+| Logistic Regression | 0.60 | 0.68 |
+| Random Forest | 0.80 | 0.88 |
+
+The test set contains only 10 records, so these results should be treated as illustrative. A larger, independently validated dataset would be required for meaningful evaluation.
+
+## Technologies
+
+- Python
+- Jupyter Notebook
+- pandas
+- NumPy
+- scikit-learn
+- Matplotlib
+- Seaborn
+- joblib
+
+## Run locally
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/GoogleDevTeam/heart-disease-prediction.git
+   cd heart-disease-prediction
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
+
+3. Open the notebook:
+
+   ```bash
+   jupyter notebook heart_disease_prediction.ipynb
+   ```
+
+4. Run the cells from top to bottom.
+
+## Files
+
+- `heart_disease_prediction.ipynb` — the analysis and model workflow
+- `heart.csv` — the included educational dataset
+- `requirements.txt` — Python dependencies
+
+## Future improvements
+
+- Evaluate on a larger dataset
+- Use cross-validation
+- Tune model hyperparameters
+- Compare additional models
+- Analyze class imbalance
+- Add reproducible pipelines and stronger validation
+
+## Author
+
+Albaraa Loay Mahroos  
+Information Systems Student at Shaqra University
