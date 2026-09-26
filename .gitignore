@@ -3,18 +3,31 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
-
-# Environments
-.env
-.venv
-env/
+# Virtual environments
+.venv/
 venv/
+env/
 ENV/
 
-# Saved Models (Avoid uploading large binaries to GitHub)
+# Environment variables and secrets
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Saved model artifacts
 *.pkl
-*.h5
 *.joblib
+*.h5
 saved_models/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# Local private datasets (the committed heart.csv is synthetic)
+private_data/
